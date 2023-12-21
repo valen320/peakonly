@@ -37,7 +37,7 @@ class MainWindow(AbtractMainWindow):
 
         # Set geometry and title
         self.setGeometry(300, 300, 900, 600)
-        self.setWindowTitle('peakonly')
+        self.setWindowTitle('peakonly v.0.2.1-beta')
         self.show()
 
     def _create_menu(self):
@@ -269,29 +269,29 @@ class MainWindow(AbtractMainWindow):
             if not os.path.exists(folder):
                 os.mkdir(folder)
             # Classifier
-            url = 'https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/rAhl2u7WeIUGYA'
+            url = 'https://drive.google.com/uc?export=download&id=1ryr6KAQ7QPN488D0BH4OI5f_I9KZ4oU7'
             file = os.path.join(folder, 'Classifier.pt')
             urllib.request.urlretrieve(url, file, progress_callback.emit)
             # Segmentator
-            url = 'https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/9m5e3C0q0HKbuw'
+            url = 'https://drive.google.com/uc?export=download&id=12m-7b-MlkNyyTAqmgXehz4NEAU1uS_UE'
             file = os.path.join(folder, 'Segmentator.pt')
             urllib.request.urlretrieve(url, file, progress_callback.emit)
             # RecurrentCNN
-            url = 'https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/1IrXRWDWhANqKw'
+            url = 'https://drive.google.com/uc?export=download&id=1TLKv5UZLYOb4r0IwFqukCeHmbFXs71jl'
             file = os.path.join(folder, 'RecurrentCNN.pt')
             urllib.request.urlretrieve(url, file, progress_callback.emit)
         elif mode == 'data':
             folder = 'data/annotation'
             if not os.path.exists(folder):
                 os.mkdir(folder)
-            url = 'https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/f6BiwqWYF4UVnA'
+            url = 'https://drive.google.com/uc?export=download&id=1ZlbdYbt9dD4gTnTa0qdafsPCsIc9KVvV'
             file = 'data/annotation/annotation.zip'
             urllib.request.urlretrieve(url, file, progress_callback.emit)
             with zipfile.ZipFile(file) as zip_file:
                 zip_file.extractall(folder)
             os.remove(file)
         elif mode == 'example':
-            url = 'https://getfile.dokpub.com/yandex/get/https://yadi.sk/d/BhQNge3db7M2Lw'
+            url = 'https://drive.google.com/uc?export=download&id=1E4gpuwYwNjF1rldIh2PUMmQpspYSYz2w'
             file = 'data/mix.mzML'
             urllib.request.urlretrieve(url, file, progress_callback.emit)
         else:
